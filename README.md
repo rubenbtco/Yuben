@@ -2,16 +2,15 @@
 
 ## Fait:
 ### YUNA :
-- une base de donnée avec 2 tables : Utilisateurs et chat
+- un systeme de déplacement
 - compte rendu
-- base de donnée
+- une carte
 
 ### RUBEN:
 - coordination entre la base de donnée et le réseau
-- un systeme de déplacement
-- un systeme de dialogue (chat) entre les joueurs
-- une carte
 
+- un systeme de dialogue (chat) entre les joueurs
+- une base de donnée avec 2 tables : Utilisateurs et chat
 ## Pour commencer initialiser un projet :
 
 - pip install pygame pytmx pyscroll mysql.connector
