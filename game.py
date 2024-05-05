@@ -26,10 +26,10 @@ class Game:
         pygame.display.set_caption("Mon Jeu")
 
         # LOCALHOST
-        self.db_manager = DatabaseManager('localhost', 'root', '','nsi_eleve6')
+        #self.db_manager = DatabaseManager('localhost', 'root', '','nsi_eleve6')
 
         # Serveur du prof
-        #self.db_manager = DatabaseManager('0504-srv-sig', 'nsi_eleve6', 'eleve6', 'nsi_eleve6')
+        self.db_manager = DatabaseManager('0504-srv-sig', 'nsi_eleve6', 'eleve6', 'nsi_eleve6')
 
         self.ui_manager = UIManager(self.screen, self.db_manager,self)
 
