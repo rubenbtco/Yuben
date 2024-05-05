@@ -3,12 +3,13 @@
 ## Faire:
 ### YUNA :
 - une base de donnée avec 2 tables : Utilisateurs et chat
-- un systeme de dialogue (chat) entre les joueurs
+- une carte
+- base de donnée
 
 ### RUBEN:
-- une carte
+- coordination entre la base de donnée et le réseau
 - un systeme de déplacement
-
+- un systeme de dialogue (chat) entre les joueurs
 
 
 ## Pour commencer initialiser un projet :
