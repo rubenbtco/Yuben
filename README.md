@@ -1,23 +1,21 @@
 # Cahier des charges:
 
-## Faire:
+## Fait:
 ### YUNA :
 - une base de donnée avec 2 tables : Utilisateurs et chat
-- une carte
+- compte rendu
 - base de donnée
 
 ### RUBEN:
 - coordination entre la base de donnée et le réseau
 - un systeme de déplacement
 - un systeme de dialogue (chat) entre les joueurs
-
+- une carte
 
 ## Pour commencer initialiser un projet :
 
-- Installer python 3.7.4
 - pip install pygame pytmx pyscroll mysql.connector
-
-- Avoir un serveur mysql (exemple : XAMPP ♥, Laragon, Wamp etc...)
+- Avoir un serveur mysql (exemple : XAMPP , Laragon, Wamp etc...)
 - Créer une base de donnée nommée "nsi_eleve6" OU recharger le .sql (/data/db/eleve6.sql)
 
 ## MODIFICATION A FAIRE
