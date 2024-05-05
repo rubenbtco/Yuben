@@ -56,12 +56,12 @@ class Game:
         """
         while self.running:
             self.handle_events()
-            if not self.chat_box.active:  # si le chat n'est pas actif, update le jeu
+            if not self.chat_box.active:  
                 self.update()
             self.update_chat()
             self.group.update()
             self.group.draw(self.screen)
-            self.chat_box.draw(self.screen)  # Assurez-vous que c'est après le dessin du groupe
+            self.chat_box.draw(self.screen)  
             pygame.display.flip()
 
     def update(self):
@@ -96,7 +96,7 @@ class Game:
             Elle permet de récupérer les messages de la base de données et les afficher.
         """
         current_time = pygame.time.get_ticks()
-        if current_time - self.last_message_update > 1500:  # (1.5 secondes)
+        if current_time - self.last_message_update > 1500:  
             messages = self.db_manager.get_messages()
             self.chat_box.clear()
             for message in messages:
@@ -108,44 +108,36 @@ class Game:
             Methode pour gérer les événements.
             Elle permet de gérer les événements de la fenêtre et les touches du clavier.
         """
-        # Pour chaque événement dans la liste des événements
+
         for event in pygame.event.get():
 
-            # Si l'événement est de type QUIT
+
             if event.type == pygame.QUIT:
                 self.running = False
 
-            # Si on appui sur une touche
             elif event.type == pygame.KEYDOWN:
-                if self.chat_box.active: # Si le chat est actif, n'utilisez que les touches pour le chat
+                if self.chat_box.active: 
 
-                    # Fermer le chat avec Échap
                     if event.key == pygame.K_ESCAPE:
                         self.chat_box.toggle()
 
-                    # Envoyer le message avec ENTER
                     elif event.key == pygame.K_RETURN:
                         message = self.chat_box.input_text
 
-                        # On vérifie si le message n'est pas vide et que l'utilisateur est connecté
                         if self.current_user_id is not None and message != '':
                             self.db_manager.send_message(self.current_user_id, message)
                         self.chat_box.input_text = ''
                         self.chat_box.toggle()
 
-                    # Écrire le message
                     else:
                         self.chat_box.update_input(event)
 
 
-                else:  # Si le chat n'est pas actif, utilisez les touches pour d'autres contrôles
-                    # Fermer le jeu avec Échap
+                else: 
                     if event.key == pygame.K_ESCAPE:
                         self.running = False
 
-                    # Ouvrir le chat avec T
                     elif event.key == pygame.K_t:
-                        # Ouvrir le chat si T est pressé
                         self.chat_box.toggle()
 
     def load_map(self, filename):
@@ -153,7 +145,6 @@ class Game:
             Methode pour charger la carte et le joueur.
         """
 
-        # Chargement de la map
         tmx_data = pytmx.util_pygame.load_pygame(filename)
         map_data = pyscroll.data.TiledMapData(tmx_data)
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())
@@ -162,15 +153,12 @@ class Game:
         self.map_layer = map_layer
         self.group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=1)
 
-        # Ajout du joueur
         try:
             player_position = tmx_data.get_object_by_name("PlayerStart")
             start_position = (player_position.x, player_position.y)
         except ValueError:
-            # Position par défaut
             start_position = (100, 100)
 
-        # Chargement de l'image du personnage
         player_image_path = 'assets/Modern tiles_Free/Characters_free/Adam_idle_16x16.png'
         sprite_sheet = pygame.image.load(player_image_path).convert_alpha()
 
