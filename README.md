@@ -8,7 +8,7 @@
 
 ### RUBEN:
 - coordination entre la base de donnée et le réseau
-
+- interface de connexion
 - un systeme de dialogue (chat) entre les joueurs
 - une base de donnée avec 2 tables : Utilisateurs et chat
 ## Pour commencer initialiser un projet :
