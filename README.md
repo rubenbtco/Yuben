@@ -21,3 +21,6 @@
 - Dans game.py: Ligne 32 Vérifier la connexion a la base de donnée (et vérifier l'intégrité de la base via le eleve6.sql (/data/db/))
 - Dans /data/maps/meubles.tsx : changer le chemin de la balise image "source" (ce chemin doit rediriger vers {Localisation du projet}/assets/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png)
 - Dans /data/maps/murs.tsx : changer le chemin de la balise image "source" (ce chemin doit rediriger vers {Localistation du projet}/assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png)
+
+## COMPTE RENDU
+- https://docs.google.com/document/d/1cQZktQx0KckIolukPI7varpeRpcHvKq474_nU-KkymU/edit?usp=sharing

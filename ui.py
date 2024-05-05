@@ -58,7 +58,7 @@ class UIManager:
             Méthode pour afficher l'écran de connexion.
         """
 
-        # Créer les inputs
+        
         username_label = self.font.render('Pseudo:', True, pygame.Color('white'))
         username_box = InputBox(100, 150, 200, 50)
 
@@ -70,33 +70,33 @@ class UIManager:
         running = True
 
         while running:
-            self.screen.fill((0, 0, 0))  # Couleur du fond
+            self.screen.fill((0, 0, 0))  
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
                     pygame.quit()
 
                 elif event.type == pygame.MOUSEBUTTONDOWN:
-                    # Au clique sur "Connexion"
+                    
                     if button_rect.collidepoint(event.pos):
-                        # Si la connexion est ok.
+                        
                         if self.handle_login(username_box.text, password_box.text):
                             print("Utilisateur connecté")
-                            self.game.start_game()  # Démarrer le jeu
+                            self.game.start_game() 
                             running = False
 
                 username_box.handle_event(event)
                 password_box.handle_event(event)
 
-            # Dessiner le label avant les zones de saisie
+            
             self.screen.blit(username_label, (100, username_box.rect.top - 30))
             self.screen.blit(password_label, (100, password_box.rect.top - 30))
 
-            # Dessiner les zones de saisie
+            
             username_box.draw(self.screen)
             password_box.draw(self.screen)
 
-            # Dessiner le bouton de connexion
+            
             pygame.draw.rect(self.screen, pygame.Color('dodgerblue'), button_rect)
             self.screen.blit(button_text, (button_rect.x + 50, button_rect.y + 10))
 
@@ -119,7 +119,7 @@ class UIManager:
         password_label = self.font.render('Mot de passe:', True, pygame.Color('white'))
         password_box = InputBox(100, 350, 200, 50)
 
-        button_rect = pygame.Rect(100, 450, 200, 50)  # Ajustement pour le bouton
+        button_rect = pygame.Rect(100, 450, 200, 50)  
         button_text = self.font.render('Inscription', True, pygame.Color('white'))
         running = True
 
@@ -141,19 +141,19 @@ class UIManager:
                 surname_box.handle_event(event)
                 password_box.handle_event(event)
 
-            # Dessiner le label avant les zones de saisie
+            
             self.screen.blit(username_label, (100, username_box.rect.top - 30))
             self.screen.blit(name_label, (100, name_box.rect.top - 30))
             self.screen.blit(surname_label, (100, surname_box.rect.top - 30))
             self.screen.blit(password_label, (100, password_box.rect.top - 30))
 
-            # Dessiner les zones de saisie
+            
             username_box.draw(self.screen)
             name_box.draw(self.screen)
             surname_box.draw(self.screen)
             password_box.draw(self.screen)
 
-            # Dessiner le bouton d'inscription
+            
             pygame.draw.rect(self.screen, pygame.Color('dodgerblue'), button_rect)
             self.screen.blit(button_text, (button_rect.x + 50, button_rect.y + 10))
 
